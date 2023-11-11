@@ -1,15 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/login.jpg"
 import { FcGoogle } from "react-icons/fc"
+import UseAuth from "../../Hooks/UseAuth";
+import { toast } from "react-toastify";
 
 const Login = () => {
+   const { login, googleLogin } = UseAuth()
+   const navigate = useNavigate()
 
    const handleSubmit = e => {
       e.preventDefault()
       const form = e.target;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password)
+
+      login(email, password)
+         .then(() => {
+            toast.success('successfully login')
+            navigate('/')
+         })
+         .catch(() => toast.error('invalid login credintial'))
+   }
+
+   const handleGoogleLogin = () => {
+      googleLogin()
+         .then(() => toast.success('succesfully register'))
+         .catch(() => toast.error('invalid login credintial'))
    }
 
    return (
@@ -39,7 +55,7 @@ const Login = () => {
                   <p className="font-medium mt-4 text-center">Dont have an account? please <Link to="/register" className="text-blue-600 font-bold underline">Register</Link> </p>
                </form>
                <p className="font-bold justify-center flex items-center gap-3 mt-2">login with
-                  <span><button className="btn btn-ghost btn-active">
+                  <span><button className="btn btn-ghost btn-active" onClick={handleGoogleLogin}>
                      <FcGoogle size={'1.2rem'} />
                      Google
                   </button></span>
