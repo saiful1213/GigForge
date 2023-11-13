@@ -5,6 +5,7 @@ import UseAuth from "../../Hooks/UseAuth";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
 
@@ -50,11 +51,14 @@ const Register = () => {
 
    return (
       <div className="w-[80vw] mx-auto mt-12">
-         <div className="flex items-center">
-            <div className="w-1/2 ">
+         <Helmet>
+            <title>GigForge | Register</title>
+         </Helmet>
+         <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 ">
                <img src={loginImg} />
             </div>
-            <div className=" w-1/2">
+            <div className="md:w-1/2">
                <form className="card-body" onSubmit={handleSubmit}>
                   <h1 className="font-bold text-center text-3xl">Register here</h1>
                   <div className="form-control">

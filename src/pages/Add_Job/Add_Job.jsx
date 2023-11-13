@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 import UseApi from "../../Hooks/UseApi";
 import UseAuth from "../../Hooks/UseAuth";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Add_Job = () => {
    const { user } = UseAuth();
@@ -19,23 +20,26 @@ const Add_Job = () => {
       const maxPrice = form.maxPrice.value;
       const description = form.desc.value;
 
-      const jobInfo = {email, title, date, category, minPrice, maxPrice, description}
+      const jobInfo = { email, title, date, category, minPrice, maxPrice, description }
 
       axios.post('/jobs', jobInfo)
-      .then(res => {
-         if(res.data.acknowledged){
-            toast.success('job posted succesfully')
-            navigate('/posted-job')
-         }
-      })
-      .catch(err =>{
-         console.log(err)
-      })
+         .then(res => {
+            if (res.data.acknowledged) {
+               toast.success('job posted succesfully')
+               navigate('/posted-job')
+            }
+         })
+         .catch(err => {
+            console.log(err)
+         })
    }
 
 
    return (
       <div className="mt-12">
+         <Helmet>
+            <title>GigForge | Add Job</title>
+         </Helmet>
          <section className="bg-white">
             <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
                <h2 className="mb-4 text-3xl font-bold text-gray-900 text-center">Add a Job</h2>

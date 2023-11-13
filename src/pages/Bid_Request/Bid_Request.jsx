@@ -1,13 +1,16 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 
 const Bid_Request = () => {
    const data = useLoaderData()
    return (
       <div className="mt-28">
+         <Helmet>
+            <title>GigForge | Bid Request</title>
+         </Helmet>
          <h1 className="text-4xl font-bold text-center mb-12">All Bid Request</h1>
          <div className="overflow-x-auto">
             <table className="table table-zebra">
-               {/* head */}
                <thead>
                   <tr>
                      <th>SL.</th>

@@ -3,6 +3,8 @@ import UseApi from "../../Hooks/UseApi";
 import UseAuth from "../../Hooks/UseAuth";
 import PostedCard from "../../components/PostedCard/PostedCard";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
+import loader from "../../assets/loader.webp"
 
 const Posted_job = () => {
    const axios = UseApi();
@@ -18,7 +20,7 @@ const Posted_job = () => {
 
 
    if (isLoading || !user) {
-      return <p className="mt-24 text-2xl text-center">loading....</p>
+      return <img src={loader} className="mt-28 mx-auto"/>
    }
 
    if (data?.data.length === 0) {
@@ -55,6 +57,9 @@ const Posted_job = () => {
 
    return (
       <div className="mt-24">
+         <Helmet>
+            <title>GigForge | Posted Job</title>
+         </Helmet>
          <h1 className="text-4xl font-bold text-center mb-8">All Posted Jobs</h1>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {

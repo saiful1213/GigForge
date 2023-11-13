@@ -25,7 +25,7 @@ const Top_Jobs = () => {
       <div className="my-24" id='top_job'>
          <h1 className="text-3xl font-bold text-center">Find Your Job</h1>
          <Tabs onSelect={handleSelect} className="my-12">
-            <TabList className="w-2/5 justify-between flex mx-auto mb-12 border-b-2">
+            <TabList className="lg:w-2/5 flex-wrap sm:flex-nowrap justify-between flex mx-auto mb-12 border-b-2">
                {tabTitles.map((category, index) => (
                   <Tab key={index}>{category}</Tab>
                ))}

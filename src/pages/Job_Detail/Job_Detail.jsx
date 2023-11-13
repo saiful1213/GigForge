@@ -2,6 +2,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 import UseApi from "../../Hooks/UseApi"
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Job_Detail = () => {
    const data = useLoaderData()
@@ -20,7 +21,7 @@ const Job_Detail = () => {
       const title = form.title.value;
       const bidderInfo = { price, date, bidderEmail, buyerEmail, title };
 
-      axios.post('/bid-info', bidderInfo)
+      axios.post('/bid_info', bidderInfo)
          .then(res => {
             if (res.data.acknowledged) {
                toast.success('you bid succesfully')
@@ -33,6 +34,9 @@ const Job_Detail = () => {
 
    return (
       <div className="mt-28 flex">
+         <Helmet>
+            <title>GigForge | Job Details</title>
+         </Helmet>
          <div className="w-1/2">
             <h1 className="font-bold text-4xl text-center mb-8">Job Info</h1>
             <div className="w-96 mx-auto space-y-3 border rounded-xl shadow-xl p-7">
