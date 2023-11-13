@@ -21,7 +21,7 @@ const My_Bids = () => {
 
    return (
       <div className="mt-28">
-         <h1 className="text-4xl font-bold text-center mb-12">All of My Bids</h1>
+         <h1 className="text-4xl font-bold text-center mb-12">My All Bids</h1>
          <div className="overflow-x-auto">
             <table className="table table-zebra">
                {/* head */}

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/login.jpg"
 import { FcGoogle } from "react-icons/fc"
 import UseAuth from "../../Hooks/UseAuth";
@@ -6,7 +6,8 @@ import { toast } from "react-toastify";
 
 const Login = () => {
    const { login, googleLogin } = UseAuth()
-   const navigate = useNavigate()
+   const navigate = useNavigate();
+   const location = useLocation();
 
    const handleSubmit = e => {
       e.preventDefault()
@@ -17,14 +18,17 @@ const Login = () => {
       login(email, password)
          .then(() => {
             toast.success('successfully login')
-            navigate('/')
+            navigate(location.state ? location.state : '/')
          })
          .catch(() => toast.error('invalid login credintial'))
    }
 
    const handleGoogleLogin = () => {
       googleLogin()
-         .then(() => toast.success('succesfully register'))
+         .then(() => {
+            toast.success('succesfully login')
+            navigate(location.state ? location.state : '/')
+         })
          .catch(() => toast.error('invalid login credintial'))
    }
 

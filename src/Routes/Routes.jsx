@@ -10,6 +10,7 @@ import Bid_Request from "../pages/Bid_Request/Bid_Request"
 import Root from "../Root/Root";
 import Job_Detail from "../pages/Job_Detail/Job_Detail";
 import UpdateJob from "../pages/UpdateJob/UpdateJob";
+import PrivateRoute from "./PrivateRoute";
 
 
 const Routes = createBrowserRouter([
@@ -24,19 +25,19 @@ const Routes = createBrowserRouter([
          },
          {
             path: "add-job",
-            element: <Add_Job></Add_Job>
+            element: <PrivateRoute><Add_Job></Add_Job></PrivateRoute>
          },
          {
             path: "posted-job",
-            element: <Posted_job></Posted_job>,
+            element: <PrivateRoute><Posted_job></Posted_job></PrivateRoute>,
          },
          {
             path: "my-bid",
-            element: <My_Bids></My_Bids>,
+            element: <PrivateRoute><My_Bids></My_Bids></PrivateRoute>,
          },
          {
             path: "bid-request",
-            element: <Bid_Request></Bid_Request>,
+            element: <PrivateRoute><Bid_Request></Bid_Request></PrivateRoute>,
             loader: ()=> fetch('http://localhost:5000/api/v1/bid_info')
          },
          {
@@ -49,7 +50,7 @@ const Routes = createBrowserRouter([
          },
          {
             path: 'job_detail/:id',
-            element: <Job_Detail></Job_Detail>,
+            element: <PrivateRoute><Job_Detail></Job_Detail></PrivateRoute>,
             loader: ({params})=> fetch(`http://localhost:5000/api/v1/jobs/${params.id}`)
          },
          {
