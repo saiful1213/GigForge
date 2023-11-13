@@ -9,6 +9,7 @@ import My_Bids from "../pages/My_Bids/My_Bids"
 import Bid_Request from "../pages/Bid_Request/Bid_Request"
 import Root from "../Root/Root";
 import Job_Detail from "../pages/Job_Detail/Job_Detail";
+import UpdateJob from "../pages/UpdateJob/UpdateJob";
 
 
 const Routes = createBrowserRouter([
@@ -46,9 +47,14 @@ const Routes = createBrowserRouter([
             element: <Register></Register>
          },
          {
-            path: '/job_detail/:id',
+            path: 'job_detail/:id',
             element: <Job_Detail></Job_Detail>,
             loader: ({params})=> fetch(`http://localhost:5000/api/v1/jobs/${params.id}`)
+         },
+         {
+            path: 'Posted-job/update/:id',
+            element: <UpdateJob></UpdateJob>,
+            loader: ({params}) => fetch(`http://localhost:5000/api/v1/jobs/update/${params.id}`)
          }
       ]
    }

@@ -22,7 +22,7 @@ const Top_Jobs = () => {
    };
 
    return (
-      <div className="my-24">
+      <div className="my-24" id='top_job'>
          <h1 className="text-3xl font-bold text-center">Find Your Job</h1>
          <Tabs onSelect={handleSelect} className="my-12">
             <TabList className="w-2/5 justify-between flex mx-auto mb-12 border-b-2">
