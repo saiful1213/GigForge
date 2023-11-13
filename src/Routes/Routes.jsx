@@ -32,11 +32,12 @@ const Routes = createBrowserRouter([
          },
          {
             path: "my-bid",
-            element: <My_Bids></My_Bids>
+            element: <My_Bids></My_Bids>,
          },
          {
             path: "bid-request",
-            element: <Bid_Request></Bid_Request>
+            element: <Bid_Request></Bid_Request>,
+            loader: ()=> fetch('http://localhost:5000/api/v1/bid_info')
          },
          {
             path: "login",

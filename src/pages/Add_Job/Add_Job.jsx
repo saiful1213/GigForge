@@ -56,9 +56,9 @@ const Add_Job = () => {
                      <div>
                         <label type="category" className="block mb-2 text-sm font-medium text-gray-900 ">Category</label>
                         <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" name="category">
-                           <option defaultValue="Web Development">Web_Development</option>
-                           <option value="Digital Marketing">Digital_Marketing</option>
-                           <option value="Grafics Design">Grafics_Design</option>
+                           <option defaultValue="Web_Development">Web Development</option>
+                           <option value="Digital_Marketing">Digital Marketing</option>
+                           <option value="Graphics_Design">Graphics Design</option>
                         </select>
                      </div>
                      <div className="w-full">

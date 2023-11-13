@@ -59,7 +59,7 @@ const Job_Detail = () => {
                         <label className="label">
                            <span className="label-text">Deadline</span>
                         </label>
-                        <input type="text" name="date" placeholder="place your deadline" className="input input-bordered" required />
+                        <input type="date" name="date" defaultValue={date} placeholder="place your deadline" className="input input-bordered" required />
                      </div>
                   </div>
 
