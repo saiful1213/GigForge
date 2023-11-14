@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import img from "../../assets/img.webp"
 import { BsCheckCircle } from "react-icons/bs"
 
