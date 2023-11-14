@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'bgImgGradient': "linear-gradient(to right, #000000b3, #000000b3), url('./src/assets/bannerLg.jpg')",
+        'bgImgGradient': "linear-gradient(to right, #000000b3, #000000b3), url('https://i.ibb.co/PjJ1C0C/bannerLg.jpg')",
       },
     },
   },

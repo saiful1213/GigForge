@@ -38,7 +38,7 @@ const Routes = createBrowserRouter([
          {
             path: "bid-request",
             element: <PrivateRoute><Bid_Request></Bid_Request></PrivateRoute>,
-            loader: ()=> fetch('http://localhost:5000/api/v1/bid_info')
+            loader: ()=> fetch('https://gig-forge-server.vercel.app/api/v1/bid_info')
          },
          {
             path: "login",
@@ -51,12 +51,12 @@ const Routes = createBrowserRouter([
          {
             path: 'job_detail/:id',
             element: <PrivateRoute><Job_Detail></Job_Detail></PrivateRoute>,
-            loader: ({params})=> fetch(`http://localhost:5000/api/v1/jobs/${params.id}`)
+            loader: ({params})=> fetch(`https://gig-forge-server.vercel.app/api/v1/jobs/${params.id}`)
          },
          {
             path: 'Posted-job/update/:id',
             element: <UpdateJob></UpdateJob>,
-            loader: ({params}) => fetch(`http://localhost:5000/api/v1/jobs/update/${params.id}`)
+            loader: ({params}) => fetch(`https://gig-forge-server.vercel.app/api/v1/jobs/update/${params.id}`)
          }
       ]
    }
