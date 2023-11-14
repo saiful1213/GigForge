@@ -1,8 +1,9 @@
-# React + Vite
+# Project Live Link: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# About GigForge
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- In my project Gigforge connecting freelancers and clients for collaborative projects.
+- User roles (Freelancers, Clients), Profile Management, Search and Filter, Project Posting, Bidding System, Messaging, Payment Integration, Review and Rating, Dashboard, Notifications.
+- Seamless payment processing for project milestones.
+- Clients can rate and leave reviews for freelancers.
+- Track project progress, earnings, and reviews.
